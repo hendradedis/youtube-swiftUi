@@ -100,148 +100,55 @@ struct Home: View {
 struct Kontent: View {
     var body: some View {
         List{
+            CellKontent(imageKontent: "movie3", profileKontent: "enda", judul: "The mola show", deskription: "Lord akan kembali lagi coming soon", durasi: "10:00")
             
-            //kontent 1
-            VStack{
-                ZStack(alignment: .bottomTrailing){
-                    Image("movie")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("01:20.00")
-                        .padding(.all, 5)
-                        .foregroundColor(.white)
-                        .font(.caption)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .padding(.trailing, 5)
-                        .padding(.bottom, 5.0)
-                }
+            CellKontent(imageKontent: "movie", profileKontent: "enda", judul: "The mola show 2", deskription: "Lord akan kembali lagi coming soon 2", durasi: "10:00")
+            
+        }
+    }
+}
+
+struct CellKontent: View {
+    var imageKontent: String
+    var profileKontent: String
+    var judul: String
+    var deskription: String
+    var durasi : String
+    
+    var body: some View {
+        //kontent 1
+        VStack{
+            ZStack(alignment: .bottomTrailing){
+                Image(imageKontent)
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                 
-                HStack {
-                    Image("enda")
-                        .resizable()
-                        .frame(width:20, height:20)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    
-                    VStack(alignment:.leading){
-                        Text("The East war movie").font(.headline)
-                        HStack{
-                            Text("The East war movie film yang menceritakan kisah peperangan di asia tenggara").font(.caption)
-                        }
-                    }
-                    Spacer()
-                    Image(systemName: "list.bullet")
-                }
+                Text(durasi)
+                    .padding(.all, 5)
+                    .foregroundColor(.white)
+                    .font(.caption)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                    .padding(.trailing, 5)
+                    .padding(.bottom, 5.0)
             }
             
-            
-            //kontent 2
-            VStack{
-                ZStack(alignment: .bottomTrailing){
-                    Image("movie1")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("01:20.00")
-                        .padding(.all, 5)
-                        .foregroundColor(.white)
-                        .font(.caption)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .padding(.trailing, 5)
-                        .padding(.bottom, 5.0)
-                }
+            HStack {
+                Image(profileKontent)
+                    .resizable()
+                    .frame(width:20, height:20)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 
-                HStack {
-                    Image("enda")
-                        .resizable()
-                        .frame(width:20, height:20)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    
-                    VStack(alignment:.leading){
-                        Text("The Mystery of Dragon").font(.headline)
-                        HStack{
-                            Text("karya dari jacki chan sangat antusian anda jangann lupa ya").font(.caption)
-                        }
+                VStack(alignment:.leading){
+                    Text(judul).font(.headline)
+                    HStack{
+                        Text(deskription).font(.caption)
                     }
-                    Spacer()
-                    Image(systemName: "list.bullet")
                 }
+                Spacer()
+                Image(systemName: "list.bullet")
             }
-            
-            //kontent 3
-            VStack{
-                ZStack(alignment: .bottomTrailing){
-                    Image("movie2")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("01:20.00")
-                        .padding(.all, 5)
-                        .foregroundColor(.white)
-                        .font(.caption)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .padding(.trailing, 5)
-                        .padding(.bottom, 5.0)
-                }
-                
-                HStack {
-                    Image("enda")
-                        .resizable()
-                        .frame(width:20, height:20)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    
-                    VStack(alignment:.leading){
-                        Text("The 10 film horor").font(.headline)
-                        HStack{
-                            Text("Film horo disini juga lengkap bangget").font(.caption)
-                        }
-                    }
-                    Spacer()
-                    Image(systemName: "list.bullet")
-                }
-            }
-            
-            //kontnet4
-            VStack{
-                ZStack(alignment: .bottomTrailing){
-                    Image("movie3")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("01:20.00")
-                        .padding(.all, 5)
-                        .foregroundColor(.white)
-                        .font(.caption)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .padding(.trailing, 5)
-                        .padding(.bottom, 5.0)
-                }
-                
-                HStack {
-                    Image("enda")
-                        .resizable()
-                        .frame(width:20, height:20)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    
-                    VStack(alignment:.leading){
-                        Text("The Kids movie").font(.headline)
-                        HStack{
-                            Text("Film anak anak lengkap juga di Mola").font(.caption)
-                        }
-                    }
-                    Spacer()
-                    Image(systemName: "list.bullet")
-                }
-            }
-            
         }
     }
 }
